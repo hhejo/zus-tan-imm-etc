@@ -3,8 +3,8 @@ import { useCountStore } from '@/store/store';
 
 export default function Home() {
   const count = useCountStore((state) => state.count);
-  const increase = useCountStore((state) => state.increase);
-  const decrease = useCountStore((state) => state.decrease);
+  const { increase, decrease } = useCountStore((state) => state.actions);
+
   return (
     <div className="flex flex-col items-center mt-4">
       <h1 className="text-4xl font-bold">Welcome</h1>
